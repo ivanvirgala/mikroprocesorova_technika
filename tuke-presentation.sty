@@ -1,0 +1,309 @@
+% TUKE Beamer style for Mikroprocesorova technika
+% Compiler: pdfLaTeX
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tuke-presentation}[2026/07/20 TUKE lecture beamer style]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[slovak]{babel}
+\RequirePackage{newpxtext,newpxmath}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{listings}
+\RequirePackage{amsmath}
+\RequirePackage{booktabs}
+\RequirePackage{graphicx}
+\RequirePackage{hyperref}
+\RequirePackage{etoolbox}
+
+% Compatibility additions for the revised lecture content
+\RequirePackage{array}
+\RequirePackage{siunitx}
+\RequirePackage{ragged2e}
+
+\usetikzlibrary{shadows,calc,positioning}
+\usefonttheme{serif}
+
+% One dominant color. Lighter tones are derived from this color.
+\definecolor{MainBlue}{HTML}{2E86B7}
+\definecolor{TextColor}{HTML}{222222}
+\definecolor{LineGray}{HTML}{D8E1E6}
+\definecolor{CodeBack}{HTML}{F5F7F8}
+\definecolor{LightBlue}{HTML}{EAF4FA}
+\definecolor{TUKEgray}{HTML}{F5F7F9}
+\definecolor{TUKEline}{HTML}{D8E0E6}
+\definecolor{TUKEtext}{HTML}{222222}
+\usepackage[none]{hyphenat}
+% Placeholder logo. Replace by image if needed:
+% \renewcommand{\TUKElogo}{\includegraphics[height=0.38cm]{images/common/tuke-logo.pdf}}
+\newcommand{\TUKElogo}{%
+    \includegraphics[
+        height=0.62cm,
+        keepaspectratio
+    ]{figures/common/tuke_logo_white_transparent.png}%
+}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{items}[circle]
+\setbeamersize{text margin left=0.55cm,text margin right=0.55cm}
+% Compatibility block colors
+\setbeamercolor{block title}{fg=white,bg=MainBlue}
+\setbeamercolor{block body}{fg=TextColor,bg=MainBlue!7}
+\setbeamercolor{block title alerted}{fg=white,bg=MainBlue}
+\setbeamercolor{block body alerted}{fg=TextColor,bg=MainBlue!5}
+\setbeamercolor{normal text}{fg=TextColor,bg=white}
+\setbeamercolor{structure}{fg=MainBlue}
+\setbeamercolor{itemize item}{fg=MainBlue}
+\setbeamercolor{itemize subitem}{fg=MainBlue}
+\setbeamercolor{enumerate item}{fg=MainBlue}
+
+\setbeamerfont{title}{series=\bfseries,size=\LARGE}
+\setbeamerfont{subtitle}{size=\large}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+
+% Rounded slide title bar
+% Full-width slide title bar
+\setbeamertemplate{frametitle}{%
+    \nointerlineskip%
+    \begin{tikzpicture}[remember picture,overlay]
+
+        \node[
+            anchor=north west,
+            rounded corners=0pt,
+            fill=MainBlue,
+            minimum width=\paperwidth,
+            minimum height=0.76cm,
+            inner sep=0pt
+        ] at (current page.north west) {};
+
+        \node[
+            anchor=west,
+            text=white,
+            font=\large\bfseries
+        ] at ([xshift=0.48cm,yshift=-0.43cm]current page.north west)
+        {\insertframetitle};
+
+        \node[
+            anchor=east,
+            text=white,
+            font=\small\bfseries
+        ] at ([xshift=-0.18cm,yshift=-0.38cm]current page.north east)
+        {\TUKElogo};
+
+    \end{tikzpicture}
+
+    \vspace{0.72cm}%
+}
+
+% ---------- Footer ----------
+\setbeamercolor{footline}{
+    fg=MainBlue,
+    bg=white
+}
+
+\setbeamertemplate{footline}{%
+    \leavevmode%
+    \hbox{%
+        \begin{beamercolorbox}[
+            wd=\paperwidth,
+            ht=0.35cm,
+            dp=0.15cm,
+            rightskip=0.35cm
+        ]{footline}%
+            \hfill
+            {\color{MainBlue}\scriptsize
+            \insertframenumber\,/\,\inserttotalframenumber}
+        \end{beamercolorbox}%
+    }%
+}
+
+% Title slide command
+\newcommand{\TUKEtitleframe}{%
+\begin{frame}[plain]
+\begin{center}
+\vspace*{0.70cm}
+\begin{tikzpicture}
+    \node[
+        rounded corners=7pt,
+        fill=MainBlue,
+        text=white,
+        text width=0.78\paperwidth,
+        align=center,
+        inner sep=18pt,
+        drop shadow={shadow xshift=2pt,shadow yshift=-2pt,opacity=0.28}
+    ]
+    {%
+        {\LARGE\bfseries \inserttitle}\\[0.25cm]
+        {\large \insertsubtitle}%
+    };
+\end{tikzpicture}
+
+\vspace{0.82cm}
+
+{\Large\bfseries \insertauthor}
+
+\vspace{0.42cm}
+
+{\large \insertinstitute}
+
+\vspace{0.25cm}
+
+{\large \insertdate}
+
+\vfill
+
+{\color{MainBlue}\bfseries \TUKElogo}
+\end{center}
+\end{frame}%
+}
+
+% Section slide command
+\newcommand{\TUKEsection}[2]{%
+\section{#1}
+\begin{frame}[plain]
+\begin{center}
+\vspace*{1.85cm}
+\begin{tikzpicture}
+\node[
+    rounded corners=7pt,
+    fill=MainBlue,
+    text=white,
+    text width=0.84\paperwidth,
+    align=center,
+    inner ysep=18pt,
+    inner xsep=10pt,
+    drop shadow={shadow xshift=2pt,shadow yshift=-2pt,opacity=0.26}
+] {%
+    {\LARGE\bfseries #1}\\[0.25cm]
+    {\large #2}%
+};
+\end{tikzpicture}
+\vfill
+{\color{MainBlue}\bfseries \TUKElogo}
+\end{center}
+\end{frame}%
+}
+
+% Closing slide command
+\newcommand{\TUKEclosingframe}[1]{%
+\begin{frame}[plain]
+\begin{center}
+\vspace*{1.75cm}
+\begin{tikzpicture}
+\node[
+    rounded corners=7pt,
+    fill=MainBlue,
+    text=white,
+    text width=0.50\paperwidth,
+    align=center,
+    inner sep=20pt,
+    drop shadow={shadow xshift=2pt,shadow yshift=-2pt,opacity=0.28}
+] {%
+    {\Huge\bfseries \v{D}akujem za pozornos\v{t}}\\[0.25cm]
+    {\Large #1}%
+};
+\end{tikzpicture}
+\vfill
+{\color{MainBlue}\bfseries \TUKElogo}
+\end{center}
+\end{frame}%
+}
+
+% Rounded boxes
+\newtcolorbox{tukebox}[1]{
+    enhanced,
+    colback=MainBlue!7,
+    colframe=MainBlue,
+    coltitle=white,
+    colbacktitle=MainBlue,
+    title={#1},
+    fonttitle=\bfseries,
+    arc=3mm,
+    boxrule=0.6pt,
+    left=3mm,
+    right=3mm,
+    top=2mm,
+    bottom=2mm,
+    drop shadow={opacity=0.18,shadow xshift=1.4pt,shadow yshift=-1.4pt}
+}
+
+\newtcolorbox{tukethinbox}[1]{
+    enhanced,
+    colback=white,
+    colframe=MainBlue,
+    title={#1},
+    coltitle=white,
+    colbacktitle=MainBlue,
+    fonttitle=\bfseries,
+    arc=3mm,
+    boxrule=0.6pt,
+    left=3mm,
+    right=3mm,
+    top=2mm,
+    bottom=2mm,
+    drop shadow={opacity=0.12,shadow xshift=1.0pt,shadow yshift=-1.0pt}
+}
+
+\newtcolorbox{tukewarning}[1]{
+    enhanced,
+    colback=MainBlue!5,
+    colframe=MainBlue,
+    title={#1},
+    coltitle=white,
+    colbacktitle=MainBlue,
+    fonttitle=\bfseries,
+    arc=3mm,
+    boxrule=0.8pt,
+    left=3mm,
+    right=3mm,
+    top=2mm,
+    bottom=2mm,
+    drop shadow={opacity=0.18,shadow xshift=1.4pt,shadow yshift=-1.4pt}
+}
+
+% Code style
+\lstdefinestyle{avrstyle}{
+    language=C,
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{MainBlue},
+    commentstyle=\itshape\color{gray!70!black},
+    stringstyle=\color{MainBlue!80!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    numbersep=8pt,
+    frame=single,
+    rulecolor=\color{MainBlue},
+    backgroundcolor=\color{CodeBack},
+    showstringspaces=false,
+    tabsize=4,
+    breaklines=true,
+    columns=fullflexible,
+    keepspaces=true
+}
+
+\newcommand{\codeinline}[1]{\texttt{#1}}
+\newcommand{\reg}[1]{\texttt{#1}}
+\newcommand{\bit}[1]{\texttt{#1}}
+
+% BibTeX logo definition supplied by user
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=MainBlue,
+    urlcolor=MainBlue,
+    citecolor=MainBlue
+}
+
+
+% Compatibility macros used in the revised lecture source
+\newcommand{\BlueBox}[2]{%
+\begin{block}{#1}
+#2
+\end{block}%
+}
+
+\newcommand{\SectionFrame}[2]{\TUKEsection{#1}{#2}}

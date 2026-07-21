@@ -1,0 +1,21 @@
+\TUKEsection{Princíp I²C}{SDA, SCL, pull-up rezistory a open-drain}
+
+\begin{frame}{Ciele prednášky}
+\begin{tukebox}{Po tejto prednáške by mal študent vedieť}
+\begin{itemize}
+    \item vysvetliť základný význam témy: twi/i²c komunikácia,
+    \item identifikovať príslušné registre alebo hardvérové bloky,
+    \item rozlíšiť abstraktný princíp od konkrétnej implementácie v ATmega328P,
+    \item pripraviť jednoduchý program v jazyku C bez Arduino frameworku.
+\end{itemize}
+\end{tukebox}
+\end{frame}
+
+\begin{frame}{Kontext v predmete}
+\begin{itemize}
+    \item Používame Arduino UNO R3 ako vývojovú dosku.
+    \item Cieľovým mikrokontrolérom je ATmega328P.
+    \item Programujeme v čistom C s vlastným \codeinline{main()}.
+    \item Periférie nastavujeme priamo cez registre.
+\end{itemize}
+\end{frame}

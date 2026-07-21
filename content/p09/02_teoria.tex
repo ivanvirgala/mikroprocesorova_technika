@@ -1,0 +1,34 @@
+\TUKEsection{Registre USART}{UBRR0, UCSR0A/B/C a UDR0}
+
+\begin{frame}{Základné pojmy}
+\begin{columns}[T,onlytextwidth]
+\column{0.48\textwidth}
+\begin{tukebox}{Hardvérový pohľad}
+\begin{itemize}
+    \item periférny blok,
+    \item konfiguračný register,
+    \item stavový príznak,
+    \item prerušenie alebo polling.
+\end{itemize}
+\end{tukebox}
+\column{0.48\textwidth}
+\begin{tukebox}{Programátorský pohľad}
+\begin{itemize}
+    \item nastavenie bitu,
+    \item čítanie registra,
+    \item maskovanie,
+    \item testovanie stavu.
+\end{itemize}
+\end{tukebox}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Typický postup práce s perifériou}
+\begin{enumerate}
+    \item nájsť príslušnú kapitolu v datasheete,
+    \item identifikovať registre a bity,
+    \item vypočítať potrebné parametre,
+    \item nakonfigurovať perifériu,
+    \item overiť funkciu meraním alebo diagnostickým výpisom.
+\end{enumerate}
+\end{frame}

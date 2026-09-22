@@ -8,7 +8,7 @@ Repozitár obsahuje prednáškové materiály k predmetu **Mikroprocesorová tec
 - Prednáška č. 2 – ATmega328P a digitálne I/O
 - ďalšie prednášky budú priebežne dopĺňané
 
-Materiály sú určené pre študentov studijného programu Priemyselná mechatronika v študijnom programe Strojárstvo na Strojníckej fakulte Technickej univerzite v Košiciach.
+Materiály sú určené pre študentov studijného programu Priemyselná mechatronika v študijnom odbore Strojárstvo na Strojníckej fakulte Technickej univerzite v Košiciach.
 
 ---
 

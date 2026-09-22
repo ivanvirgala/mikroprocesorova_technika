@@ -1,6 +1,6 @@
 # Mikroprocesorová technika
 
-Tento repozitár obsahuje prednáškové materiály k predmetu **Mikroprocesorová technika**.
+Repozitár obsahuje prednáškové materiály k predmetu **Mikroprocesorová technika**.
 
 ## Prednášky
 

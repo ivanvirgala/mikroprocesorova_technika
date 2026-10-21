@@ -7,6 +7,7 @@ Repozitár obsahuje prednáškové materiály k predmetu **Mikroprocesorová tec
 - Prednáška č. 1 – História a vznik mikrokontrolérov
 - Prednáška č. 2 – ATmega328P a digitálne I/O
 - Prednáška č. 3 - Prerušenia, časovače & čítače
+- Prednáška č. 4 - Ultrazvukový snímač, meranie frekvencie
 - ďalšie prednášky budú priebežne dopĺňané
 
 Materiály sú určené pre študentov študijného programu Priemyselná mechatronika v študijnom odbore Strojárstvo na Strojníckej fakulte Technickej univerzity v Košiciach.

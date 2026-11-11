@@ -9,6 +9,7 @@ Repozitár obsahuje prednáškové materiály k predmetu **Mikroprocesorová tec
 - Prednáška č. 3 - Prerušenia, časovače & čítače
 - Prednáška č. 4 - Ultrazvukový snímač, meranie frekvencie
 - Prednáška č. 5 - Komunikačné rozhranie USART
+- Prednáška č. 6 - A/D prevodník a spracovanie analógových signálov
 - ďalšie prednášky budú priebežne dopĺňané
 
 Materiály sú určené pre študentov študijného programu Priemyselná mechatronika v študijnom odbore Strojárstvo na Strojníckej fakulte Technickej univerzity v Košiciach.

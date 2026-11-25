@@ -11,7 +11,7 @@ Repozitár obsahuje prednáškové materiály k predmetu **Mikroprocesorová tec
 - Prednáška č. 5 - Komunikačné rozhranie USART
 - Prednáška č. 6 - A/D prevodník a spracovanie analógových signálov
 - Prednáška č. 7 - Sériové zbernice I2C a SPI
-- ďalšie prednášky budú priebežne dopĺňané
+- Prednáška č. 8 - Generovanie signálov PWM a PFM
 
 Materiály sú určené pre študentov študijného programu Priemyselná mechatronika v študijnom odbore Strojárstvo na Strojníckej fakulte Technickej univerzity v Košiciach.
 
